@@ -52,7 +52,7 @@ def borrow_a_book():
      count+=1
     option = int(input("\nSelect the  number of book u want to borrow\n"))
     if option - 1 >= len(available_list):
-       print("This Book is Not Avialble Yet")
+       print("This Book is Not Available Yet")
        back_to_menu()
        return
     elif available_list[option - 1] == "BORROWED":

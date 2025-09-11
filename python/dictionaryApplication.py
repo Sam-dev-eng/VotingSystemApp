@@ -6,13 +6,13 @@ students_info = {}
 def add_students():
   unique_user_name = input("Enter your USERNAME:\n")
   sorted_name = sort_unique_names(unique_user_name)
-  if sorted_name == None:
+  if sorted_name is None:
     return  
   name = input("Enter your name:\n").title()
   age = int(input("Enter your age\n"))
   number_of_courses = int(input("How many courses do u Offer\n"))
   course = add_courses(number_of_courses)
-  print("\nYour Adress>>>>>>")
+  print("\nYour Address>>>>>>")
   nationality = input("Enter your Nationality:\n").title()
   state = input("Your State of Origin:\n").title()
   city_or_town = input("Your City or Town:\n").title()
@@ -34,7 +34,7 @@ def menu():
   menu_option = int(input("""
 Press->
 1 -> add Student
-2 -> diplay students records
+2 -> display students records
 3 -> display Students courses
 4 -> display Students Zipcodes
 5 -> display Students Cities
@@ -56,13 +56,13 @@ def add_courses(number):
   set_of_courses = set()
   for numbers in range(number):
     add_course = input(f"Enter course {numbers + 1}\n").title()
-    pattern = r"\b\w+\b"
+    pattern = r'\b[\w ]+\b'
     courses = "".join(re.findall(pattern ,add_course))
     validate_course = department_courses(courses)
     while validate_course != "Pass":
       print(department_courses(courses)) 
       add_course = input("Try Again\n").title()
-      pattern = r"\b\w+\b"
+      pattern = r"\b[\w ]+\b"
       courses = "".join(re.findall(pattern ,add_course))
       validate_course = department_courses(courses)
     set_of_courses.add(courses)  
@@ -95,10 +95,9 @@ Press>>>
 
 
 
-def department_courses(each_course):
-  pattern = r"\b\w+\b"
-  course = "".join(re.findall(pattern ,each_course))
-  department_courses = [ "Math",   "Physics",   "Computer Science",   "Biology",   "Chemistry", 
+def department_courses(course):
+  
+  department_courses = [ "Math",   "Physics",   "Computer Science",   "Biology",   "Chemistry",
   "Statistics",    "English",    "Economics",    "History",    "Philosophy", 
   "Sociology",   "Political Science",    "Geography",   "Psychology",   "Art", 
   "Music",   "Engineering",   "Law",    "Medicine",    "Business"]
@@ -249,10 +248,7 @@ def add_a_new_course():
         back_to_main()
         return 
       else:
-          print("USERNAME NOT FOUND!!")    
-    
-
-
+          print("USERNAME NOT FOUND!!")
 
 def remove_existing_course():
     if len(students_info) == 0:
@@ -385,10 +381,6 @@ def update_nationality():
 
 
 
-
-
-
-
 def overall_number():
      count = 0
      print("\nSTUDENTS")
@@ -400,11 +392,17 @@ def overall_number():
      print("Total Student",len(students_info))
      back_to_main()
      return 
- 
-
-      
-menu()
-
+# student_ages = ["21","20","16","10","12"]
+# word = "sanny "
+# pattern = r"\d+"
+# scores = []
+# for student in student_ages:
+#     if student < "18":
+#         scores.append(re.sub(pattern,"underage",student))
+#     else:
+#         scores.append(re.sub(pattern,"Eligible",student))
+# print(scores)
+#menu()
 
 
 
