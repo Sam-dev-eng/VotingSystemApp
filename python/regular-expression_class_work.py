@@ -1,5 +1,5 @@
 import re
-word = "my number is 123-456-789 and 0806983572"
+word = "my number is 123-456-7892 and 0806983572"
 pattern = r"\b\d{3}-\d{3}-\d{3}\b"
 print(re.search(pattern,word).group())
 
