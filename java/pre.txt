@@ -1,0 +1,48 @@
+often times we write our loop as
+
+i = // initial loop control
+while (i < endValue){
+//loop body
+
+i++
+}
+
+for (initial-action; loop-continuation-condition;
+     action-after-each-iteration){
+     //loop body
+    Statement(s);
+    }
+
+example: 
+        i = 0 ; (i < 100)? System.out.println("welcome to java");
+        i++
+
+ A for loop performs an initial action once, then repeatedly executes 
+the statements in the loop body, and performs an action after an iteration when the 
+loop-continuation-condition evaluates to true.
+
+The for loop statement starts with the keyword (for) followed by a parentheses enclosing the structure of the loop.
+The for loop is contained by three conditions.. 
+
+ 1. The initial action.
+ 2. The the loop continuation condition.
+ 3. The action after iteration (iteration means doing something over and over again, often with slight change each time).
+
+These three conditions are seperated by semicolon (;) 
+except the loop body which is enclosed by braces
+
+int i;
+ for (i = 0; i < 50; i++) {
+ System.out.println("Good Morning");
+
+
+
+
+ The loop control variable can be declared and initialized in the for loop. Here is an example:
+ 
+for (int i = 0; i < 100; i++) {
+  System.out.println("Welcome to Java!");
+ }
+
+emphasizing on the i++ and ++i while using loops to count
+ Differences betweeen variables in for loop 
